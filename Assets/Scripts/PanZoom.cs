@@ -60,7 +60,7 @@ public class PanZoom : MonoBehaviour
 
         //Pinch Zooming
         //Checking for # of touches detected
-        if(Input.touchCount == 2)
+/*         if(Input.touchCount == 2)
         {
             //Zoom error prevention
             multiTouch = true;
@@ -82,7 +82,7 @@ public class PanZoom : MonoBehaviour
 
             //zoomSpeed is to slow down the zooming
             zoom(difference * zoomSpeed);
-        }
+        } */
 
         //Panning
         else if(Input.GetMouseButton(0) && multiTouch == false)
@@ -96,7 +96,7 @@ public class PanZoom : MonoBehaviour
             
         }
 
-        zoom(Input.GetAxis("Mouse ScrollWheel"));
+        zoom(Input.GetAxis("Mouse ScrollWheel") * zoomSpeed);
     }
 
     void zoom(float increment)
