@@ -4,7 +4,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine.UI;
-using System.Threading;
 
 public class GameManager : MonoBehaviour
 {
@@ -17,7 +16,7 @@ public class GameManager : MonoBehaviour
     public GameObject pauseCanvas;
     public Slider slider;
     InfographicUI infographicUI;
-    List<String> pastMessages;
+    List<String> pastMessages = new List<String>();
     [SerializeField] GameObject adaptiveCellButton;
     [SerializeField] SwitchTargetSprite targetDisplay;
     [SerializeField] ChangeInstruction changeInstruction;
@@ -37,7 +36,7 @@ public class GameManager : MonoBehaviour
     public int maxUnlockedIndex = 0;
     public float difficultyMultiplier = 1;
     float elapsedTime = 0f;
-    [HideInInspector] public int[] pathogenCount;
+    public int[] pathogenCount;
 
     [SerializeField] public UniversalPathogenDictionary pathogenDictionary;
     [SerializeField] float[] unlockTime;
@@ -77,7 +76,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        pathogenCount = new int[pathogenDictionary.GetLength()];
+        pathogenCount = new int[pathogenPrefabs.Length];
         baseCapacity = spawnCapacity;
 
         StartCoroutine(resourceGenerator());

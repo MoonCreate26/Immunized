@@ -90,7 +90,10 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        costDisplay.isOnDrag = true;
+        if(purchasable)
+        {
+            costDisplay.isOnDrag = true;
+        }
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -144,6 +147,11 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        if(!purchasable)
+        {
+            return;
+        }
+
         cursorOnUI.overridePanZoom(true);
         panZoom.enabled = false;
         scrollRect.vertical = false;

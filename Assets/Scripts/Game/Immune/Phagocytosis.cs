@@ -62,7 +62,7 @@ public class Phagocytosis : MonoBehaviour
         float x = Random.value;
 
         //Successful devouring of pathogen
-        if (x < 1 - behavior.slip)
+        if (x < 1 - behavior.slip || behavior.attracter != null)
         {
             //Disable Bacteria
             behavior.Disable();
@@ -91,7 +91,7 @@ public class Phagocytosis : MonoBehaviour
         }
 
         //Pathogen slips off
-        else if (x > 1 - behavior.slip && behavior.attracter == null)
+        else
         {
             pathogen.gameObject.GetComponent<Idle>().idleTimer = 7f;
 
