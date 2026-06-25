@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
 
     // Pathogen & Spawn Mechanic
     [SerializeField] int spawnCapacity = 10;
+    int baseCapacity;
     public int spawnCount = 0; 
     public bool spawnEnabled = true;
     public int maxUnlockedIndex = 0;
@@ -76,6 +77,7 @@ public class GameManager : MonoBehaviour
         }
 
         pathogenCount = new int[pathogenDictionary.GetLength()];
+        baseCapacity = spawnCapacity;
 
         StartCoroutine(resourceGenerator());
     }
@@ -102,7 +104,8 @@ public class GameManager : MonoBehaviour
             panZoom.enabled = false;
         }
 
-        spawnEnabled = spawnCount < (spawnCapacity * Math.Pow(difficultyMultiplier, 2));
+        spawnCapacity = (int)(baseCapacity * Math.Pow(difficultyMultiplier, 2));
+        spawnEnabled = spawnCount < spawnCapacity;
     }
 
     public void CheckPathogenEliminated()
