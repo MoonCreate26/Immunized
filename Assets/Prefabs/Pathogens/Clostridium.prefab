@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToReplicate: 10
-  replicatableCount: 2
+  replicatableCount: 1
   countLimit: 20
 --- !u!114 &-252532723502940206
 MonoBehaviour:

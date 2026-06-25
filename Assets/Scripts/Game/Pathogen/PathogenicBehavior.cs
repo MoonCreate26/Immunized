@@ -4,23 +4,34 @@ using System.Collections.Generic;
 
 public class PathogenicBehavior : MonoBehaviour
 {
+    // Base Identifier
     public string pathogenType;
     public int pathogenIdx;
+
+    // Resources
     public int pathogenResource;
     [Range(0f, 100f)] public float resourceDropChance;
-    public float deathDelayAmount = 5f;
+    
+    // Status
+    float deafultHealth;
+    float speed = 5f;
+    public int countLimit = 20;
+
+    // Invisibility
     public bool invisible = false;
+    bool invisibleRemoved = false;
+    
+    // Death
+    public float deathDelayAmount = 5f;
     public Material grayScale;
 
-    float speed = 5f;
-
+    // Pathfind
     [HideInInspector] public Transform attracter;
 
+    // References
     GameManager gameManager;
     SpriteRenderer spriteRenderer;
     DamageCount damageCount;
-    float deafultHealth;
-    bool invisibleRemoved = false;
 
     void Start()
     {
@@ -29,6 +40,7 @@ public class PathogenicBehavior : MonoBehaviour
         spriteRenderer = gameObject.GetComponentInChildren<SpriteRenderer>();
 
         gameManager.spawnCount++;
+        gameManager.pathogenCount[pathogenIdx]++;
 
         deafultHealth = damageCount.health;
 
@@ -64,6 +76,13 @@ public class PathogenicBehavior : MonoBehaviour
         }
     }
 
+    
+    //Check if number of copies of specific pathogen exceeds accepted value
+    public bool checkPathogenCount()
+    {
+        return gameManager.pathogenCount[pathogenIdx] > countLimit;
+    }
+
     IEnumerator DelayedDeath()
     {
         yield return new WaitForSeconds(deathDelayAmount);
@@ -95,6 +114,7 @@ public class PathogenicBehavior : MonoBehaviour
         }
 
         gameManager.spawnCount--;
+        gameManager.pathogenCount[pathogenIdx]--;
         gameManager.CheckPathogenEliminated();
     }
 

@@ -25,6 +25,11 @@ public class UniversalPathogenDictionary : MonoBehaviour
         public string lastName;
     }
 
+    public int GetLength()
+    {
+        return pathogenDictionary.Count;
+    }
+
     public object GetPathogenInfo(int idx, string operationType)
     {
         if(operationType == "Sprite")

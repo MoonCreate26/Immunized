@@ -4,17 +4,21 @@ using System.Collections.Generic;
 
 public class BacterialBehavior : MonoBehaviour
 {
+    // Replication
     public float timeToReplicate = 10f;
     public int replicatableCount = 1;
-    public int countLimit = 20;
-
+    public bool childReplication = false;
     float elapsedTime = 0f;
     int count = 0;
+
+    // UI
     InteractUI interactUI;
+    PathogenicBehavior baseBehavior;
 
     void Start()
     {
         interactUI = FindObjectOfType<InteractUI>();
+        baseBehavior = GetComponent<PathogenicBehavior>();
 
         mutate();
         StartCoroutine(replicateWait());
@@ -27,13 +31,13 @@ public class BacterialBehavior : MonoBehaviour
 
     IEnumerator replicateWait()
     {
-        while (elapsedTime < timeToReplicate || checkPathogenCount())
+        while (elapsedTime < timeToReplicate || baseBehavior.checkPathogenCount())
         {
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
-        if(!checkPathogenCount() && replicatableCount > 0)
+        if(!baseBehavior.checkPathogenCount() && replicatableCount > 0)
         {
             replicate();
         }
@@ -42,12 +46,26 @@ public class BacterialBehavior : MonoBehaviour
     void replicate()
     {
         GameObject newBacteria = Instantiate(gameObject, transform.position, transform.rotation);
+        BacterialBehavior behavior = newBacteria.GetComponent<BacterialBehavior>();
+
+        behavior.timeToReplicate = timeToReplicate;
+        
+        if(childReplication)
+        {
+            behavior.replicatableCount = replicatableCount;
+        }
+
+        else
+        {
+            behavior.replicatableCount = 0;
+        }
+
         newBacteria.GetComponent<BacterialBehavior>().timeToReplicate = timeToReplicate;
         newBacteria.GetComponentInChildren<SpriteRenderer>().material = interactUI.unlitDefault;
 
         replicatableCount--;
 
-        if(replicatableCount > 0 && !checkPathogenCount())
+        if(replicatableCount > 0 && !baseBehavior.checkPathogenCount())
         {
             elapsedTime = 0f;
             StartCoroutine(replicateWait());
@@ -55,32 +73,5 @@ public class BacterialBehavior : MonoBehaviour
 
     }
 
-    //Check if number of copies of specific pathogen exceeds accepted value
-    bool checkPathogenCount()
-    {
-        PathogenicBehavior[] pathogens = FindObjectsOfType<PathogenicBehavior>();
-        PathogenicBehavior thisPathogen = gameObject.GetComponent<PathogenicBehavior>();
-
-        count = 0;
-    
-        foreach (PathogenicBehavior pathogen in pathogens)
-        {
-            // Check for the target index in the script
-            if (pathogen.pathogenIdx == thisPathogen.pathogenIdx)
-            {
-                count++;
-            }
-        }
-
-        if(count > countLimit)
-        {
-            return true;
-        }
-
-        else
-        {
-            return false;
-        }
-    }
 
 }

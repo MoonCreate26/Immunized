@@ -28,13 +28,14 @@ public class GameManager : MonoBehaviour
     public int currentWave;
 
     // Pathogen & Spawn Mechanic
-    int spawnCapacity = 10;
+    [SerializeField] int spawnCapacity = 10;
     public int spawnCount = 0; 
     public bool spawnEnabled = true;
     public int maxUnlockedIndex = 0;
     public float difficultyMultiplier = 1;
-    float elapsedTime = 0f;
+    public float elapsedTime = 0f;
     bool pathogenEliminated = false;
+    [HideInInspector] public int[] pathogenCount;
 
     [SerializeField] public UniversalPathogenDictionary pathogenDictionary;
     [SerializeField] float[] unlockTime;
@@ -74,6 +75,8 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        pathogenCount = new int[pathogenDictionary.GetLength()];
+
         StartCoroutine(resourceGenerator());
     }
 
@@ -82,6 +85,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         elapsedTime += Time.deltaTime;
+        difficultyMultiplier = 1 + elapsedTime * 0.005f;
 
         resourceCount.text = resources.ToString();
         waveText.text = "Wave " + (currentWave + 1).ToString();
@@ -98,7 +102,7 @@ public class GameManager : MonoBehaviour
             panZoom.enabled = false;
         }
 
-        spawnEnabled = spawnCount > spawnCapacity;
+        spawnEnabled = spawnCount < (spawnCapacity * Math.Pow(difficultyMultiplier, 2));
     }
 
     public void CheckPathogenEliminated()
@@ -119,6 +123,7 @@ public class GameManager : MonoBehaviour
         if(elapsedTime > unlockTime[maxUnlockedIndex + 1])
         {
             maxUnlockedIndex++;
+            Debug.Log("Index " + maxUnlockedIndex + " unlocked at " + elapsedTime + "!");
             return CheckPathogenUnlocked();
         }
 
