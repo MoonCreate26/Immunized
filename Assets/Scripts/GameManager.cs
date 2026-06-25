@@ -104,7 +104,7 @@ public class GameManager : MonoBehaviour
         }
 
         // Check if GameOver condition has been met
-        if(killedCellAmount > acceptableKilledCellAmount)
+        if(killedCellAmount > acceptableKilledCellAmount && !GameOver)
         {
             GameOverAnimator.gameObject.SetActive(true);
             GameOver = true;
