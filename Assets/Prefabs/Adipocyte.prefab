@@ -226,7 +226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   energyStored: 10
-  productionSpeed: 0.5
+  productionSpeed: 0.25
 --- !u!114 &5895307468125496954
 MonoBehaviour:
   m_ObjectHideFlags: 0
