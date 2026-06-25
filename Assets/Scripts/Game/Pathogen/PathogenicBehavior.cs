@@ -28,6 +28,7 @@ public class PathogenicBehavior : MonoBehaviour
         damageCount = gameObject.GetComponent<DamageCount>();
         spriteRenderer = gameObject.GetComponentInChildren<SpriteRenderer>();
 
+        gameManager.spawnCount++;
 
         deafultHealth = damageCount.health;
 
@@ -93,6 +94,7 @@ public class PathogenicBehavior : MonoBehaviour
             gameManager.changeResource(pathogenResource);
         }
 
+        gameManager.spawnCount--;
         gameManager.CheckPathogenEliminated();
     }
 

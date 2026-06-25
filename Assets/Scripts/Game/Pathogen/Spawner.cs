@@ -49,6 +49,8 @@ public class Spawner : MonoBehaviour
         // Delay
         yield return new WaitForSeconds((float)gameManager.pathogenDictionary.GetPathogenInfo(randomIndex, "Delay") / gameManager.difficultyMultiplier);
 
+        // Check for spawn eligibility
+        yield return new WaitUntil(() => gameManager.spawnEnabled);
 
         // Start next spawn cycle
         StartCoroutine(SpawnObjects());

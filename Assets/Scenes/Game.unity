@@ -4282,7 +4282,7 @@ MonoBehaviour:
   currentWave: 0
   maxUnlockedIndex: 0
   difficultyMultiplier: 1
-  pathogenDictionary: {fileID: 0}
+  pathogenDictionary: {fileID: 1123463583}
   unlockTime:
   - 0
   - 15
@@ -4293,7 +4293,7 @@ MonoBehaviour:
   - {fileID: 499899561030677069, guid: bc94e4003c0925a4a961adee8646dd4e, type: 3}
   - {fileID: 1627299499371739899, guid: 74740db5a955cb145a405457731fff77, type: 3}
   - {fileID: 499899561030677069, guid: 4b6eb05c482bbe24c9175ca8c282d7f8, type: 3}
-  adaptiveImmuneTarget: 0
+  adaptiveImmuneTarget: -1
   adaptiveCellList: {fileID: 975223961}
   GameOver: 0
   Paused: 0

@@ -28,13 +28,13 @@ public class GameManager : MonoBehaviour
     public int currentWave;
 
     // Pathogen & Spawn Mechanic
-    Spawner[] spawnerList;
+    int spawnCapacity = 10;
+    public int spawnCount = 0; 
+    public bool spawnEnabled = true;
     public int maxUnlockedIndex = 0;
     public float difficultyMultiplier = 1;
     float elapsedTime = 0f;
     bool pathogenEliminated = false;
-    bool spawnerEmptied = false;
-    int spawnerAmount;
 
     [SerializeField] public UniversalPathogenDictionary pathogenDictionary;
     [SerializeField] float[] unlockTime;
@@ -59,9 +59,6 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         slider.maxValue = acceptableKilledCellAmount;
-
-        spawnerList = FindObjectsByType<Spawner>(FindObjectsSortMode.None);
-        spawnerAmount = spawnerList.Length;
 
         infographicUI = pauseCanvas.GetComponent<InfographicUI>();
 
@@ -89,13 +86,6 @@ public class GameManager : MonoBehaviour
         resourceCount.text = resources.ToString();
         waveText.text = "Wave " + (currentWave + 1).ToString();
 
-        if(pathogenEliminated && spawnerEmptied)
-        {
-            newWave();
-
-            setNewInstruction("Wave Eliminated!");
-        }
-
         if(resources > resourcesCapacity)
         {
             resources = resourcesCapacity;
@@ -107,20 +97,8 @@ public class GameManager : MonoBehaviour
             GameOver = true;
             panZoom.enabled = false;
         }
-    }
 
-    void newWave()
-    {
-            currentWave++;
-            pathogenEliminated = false;
-            spawnerEmptied = false;
-
-            spawnerAmount = spawnerList.Length;
-
-            foreach(Spawner spawner in spawnerList)
-            {
-                spawner.refreshSpawner();
-            }
+        spawnEnabled = spawnCount > spawnCapacity;
     }
 
     public void CheckPathogenEliminated()
@@ -147,16 +125,7 @@ public class GameManager : MonoBehaviour
         return maxUnlockedIndex;
     }
 
-    public void CheckSpawnerEmptied()
-    {
-        spawnerAmount--;
-
-        if(spawnerAmount <= 0)
-        {
-            spawnerEmptied = true;
-        }
-    }
-
+    // Generate resource
     IEnumerator resourceGenerator()
     {
         yield return new WaitForSeconds(generationInterval);
