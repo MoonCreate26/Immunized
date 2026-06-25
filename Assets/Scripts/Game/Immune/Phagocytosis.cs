@@ -14,7 +14,6 @@ public class Phagocytosis : MonoBehaviour
     public int hypoPhagiaLimit = 7;
 
     [Range(0.0f, 10.0f)] public float knockbackForce = 3f;
-    [Range(0.0f, 1f)] public float PhagocytosisChance = 0.7f;
 
     [SerializeField] GameObject corpse;
     
@@ -60,8 +59,10 @@ public class Phagocytosis : MonoBehaviour
             return;
         }
 
+        float x = Random.value;
+
         //Successful devouring of pathogen
-        if (Random.value < PhagocytosisChance)
+        if (x < 1 - behavior.slip)
         {
             //Disable Bacteria
             behavior.Disable();
@@ -90,7 +91,7 @@ public class Phagocytosis : MonoBehaviour
         }
 
         //Pathogen slips off
-        else if (Random.value >= PhagocytosisChance && behavior.attracter == null)
+        else if (x > 1 - behavior.slip && behavior.attracter == null)
         {
             pathogen.gameObject.GetComponent<Idle>().idleTimer = 7f;
 
@@ -101,11 +102,6 @@ public class Phagocytosis : MonoBehaviour
 
             pathogenRb.velocity = Vector2.zero;
             pathogenRb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
-        }
-
-        else
-        {
-
         }
     }
 

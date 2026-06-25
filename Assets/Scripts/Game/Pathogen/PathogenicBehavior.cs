@@ -16,6 +16,7 @@ public class PathogenicBehavior : MonoBehaviour
     float deafultHealth;
     float speed = 5f;
     public int countLimit = 20;
+    [Range(0.0f, 1f)] public float slip = 0;
 
     // Invisibility
     public bool invisible = false;

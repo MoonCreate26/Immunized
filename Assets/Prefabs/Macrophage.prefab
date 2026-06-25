@@ -349,7 +349,7 @@ MonoBehaviour:
   ignoreDead: 0
   searchDisabled: 0
   filterModeActive: 0
-  filterName: 
+  filterIdx: 0
 --- !u!50 &6500313017480645918
 Rigidbody2D:
   serializedVersion: 4
@@ -587,7 +587,7 @@ MonoBehaviour:
   death: {fileID: -4670138888821551412}
   hypoPhagiaLimit: 7
   knockbackForce: 4
-  PhagocytosisChance: 1
+  PhagocytosisChance: 0.5
   corpse: {fileID: 9203217305288313206, guid: 30043da7306ce8b41b52f514b5a9ad84, type: 3}
   sampling: 0
 --- !u!114 &8968865858520298208

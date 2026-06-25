@@ -7,10 +7,18 @@ public class ForceSpawner : MonoBehaviour
     [SerializeField] GameObject entity;
     [SerializeField] int count;
     [SerializeField] float maxSpawnAngle;
+    [SerializeField] float spawnDelay;
 
     // Start is called before the first frame update
     void Start()
     {
+        StartCoroutine(spawn());
+    }
+
+    IEnumerator spawn()
+    {
+        yield return new WaitForSeconds(spawnDelay);
+
         for(int i = 0; i < count; i++)
         {
             Quaternion randomQuaternion = Quaternion.Euler(0f, 0f, Random.Range(-maxSpawnAngle, maxSpawnAngle));
@@ -24,6 +32,6 @@ public class ForceSpawner : MonoBehaviour
 
             Rigidbody2D rb = instance.GetComponent<Rigidbody2D>();
             rb.velocity = instance.transform.up * (idle.moveSpeed); 
-        }
+        } 
     }
 }

@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7964141792697046994}
   - component: {fileID: 190055010337862813}
-  - component: {fileID: 4477968127561208344}
   - component: {fileID: 4828563648988218660}
   - component: {fileID: 291597763252249646}
+  - component: {fileID: 686752427762861749}
   m_Layer: 0
   m_Name: Corpse
   m_TagString: Untagged
@@ -87,21 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4477968127561208344
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9203217305288313206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53c5aac553bba514eaac6001598e5961, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minInitialSpawnDelay: 1
-  maxInitialSpawnDelay: 3
-  maxSpawnAngle: 45
 --- !u!114 &4828563648988218660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,3 +114,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 3
+--- !u!114 &686752427762861749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9203217305288313206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3506f13de6bf1cd47bd60900343db22b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entity: {fileID: 499899561030677069, guid: 4b6eb05c482bbe24c9175ca8c282d7f8, type: 3}
+  count: 3
+  maxSpawnAngle: 180
+  spawnDelay: 2.9
