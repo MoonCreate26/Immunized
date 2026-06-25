@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject[] pathogenPrefabs;
 
     // Adaptive Immune System
-    public int adaptiveImmuneTarget;
+    public int adaptiveImmuneTarget = -1;
     [SerializeField] GameObject adaptiveCellList;
     bool currentlyShowingAdaptive = false;
 

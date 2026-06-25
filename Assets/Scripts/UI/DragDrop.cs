@@ -75,7 +75,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 
         defaultPosition = transform.position;
 
-        if(gameManager.resources < cost || adaptive && gameManager.adaptiveImmuneTarget == "")
+        if(gameManager.resources < cost || adaptive && gameManager.adaptiveImmuneTarget == -1)
         {
             purchasable = false;
             image.color = darkGray;

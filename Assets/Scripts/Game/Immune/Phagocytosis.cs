@@ -55,7 +55,7 @@ public class Phagocytosis : MonoBehaviour
     {
         PathogenicBehavior behavior = pathogen.gameObject.GetComponent<PathogenicBehavior>();
 
-        if(sampling && samplingStarted && behavior.pathogenName != dendriticCell.newImmuneTarget)
+        if(sampling && samplingStarted && behavior.pathogenIdx != dendriticCell.newImmuneTarget)
         {
             return;
         }
@@ -82,7 +82,7 @@ public class Phagocytosis : MonoBehaviour
                 }
             }
 
-            if(behavior.pathogenName == "Tuberculosis" && !sampling)
+            if(behavior.pathogenIdx == 3 && !sampling)
             {
                 death.additionalInstantiation = corpse;
                 Destroy(gameObject, 10f);

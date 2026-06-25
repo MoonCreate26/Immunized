@@ -65,8 +65,8 @@ public class BacterialBehavior : MonoBehaviour
     
         foreach (PathogenicBehavior pathogen in pathogens)
         {
-            // Check for the target string in the script
-            if (pathogen.pathogenName == thisPathogen.pathogenName)
+            // Check for the target index in the script
+            if (pathogen.pathogenIdx == thisPathogen.pathogenIdx)
             {
                 count++;
             }

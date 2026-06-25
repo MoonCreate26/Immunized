@@ -194,7 +194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathogenType: Bacteria
-  pathogenName: 3
+  pathogenIdx: 3
   pathogenResource: 0
   resourceDropChance: 0
   deathDelayAmount: 3
