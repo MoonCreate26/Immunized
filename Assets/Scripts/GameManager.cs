@@ -156,6 +156,8 @@ public class GameManager : MonoBehaviour
         killedCellAmount++;
         generationInterval += cellGenerationValue;
 
+        setNewInstruction("Dead cells do not produce resources. Production rate decreased.");
+
         Debug.Log("Cells Alive: " + (100 - (killedCellAmount / cellAmount) * 100) + "%");
     }
 
