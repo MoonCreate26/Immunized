@@ -215,9 +215,9 @@ public class GameManager : MonoBehaviour
         targetDisplay.UpdateSprite(adaptiveImmuneTarget);
     }
 
-    public void setNewInstruction(string Message)
+    public void setNewInstruction(string Message, bool forceDisplay = false)
     {
-        if(!pastMessages.Contains(Message))
+        if(!pastMessages.Contains(Message) || forceDisplay)
         {
             pastMessages.Add(Message);
             changeInstruction.change(Message);

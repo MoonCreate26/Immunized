@@ -41,7 +41,7 @@ public class DendriticCell : MonoBehaviour
         {
             gameManager.adaptiveImmuneTarget = newImmuneTarget;
             gameManager.showAdaptiveCellButton();
-            gameManager.setNewInstruction("Target of Adaptive Immune System Updated!");
+            gameManager.setNewInstruction("Target of Adaptive Immune System Updated!", true);
 
             Destroy(gameObject);
         }
