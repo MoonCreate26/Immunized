@@ -92,7 +92,7 @@ public class GameManager : MonoBehaviour
 
         // Update timer
         TimeSpan time = TimeSpan.FromSeconds(elapsedTime);
-        timerText.text = time.ToString(@"mm\:ss\.ff");
+        timerText.text = time.ToString(@"mm\:ss\:ff");
 
         // Update resources
         resourceCount.text = resources.ToString();

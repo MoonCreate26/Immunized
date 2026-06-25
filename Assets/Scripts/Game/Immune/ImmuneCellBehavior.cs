@@ -1,12 +1,18 @@
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class ImmuneCellBehavior : MonoBehaviour
 {
+    [SerializeField] String message;
+    GameManager gameManager;
     Search search;
 
     void Start()
     {
+        gameManager = FindObjectOfType<GameManager>();
+        gameManager.setNewInstruction("Message");
+
         search = gameObject.GetComponentInChildren<Search>();
     }
 
