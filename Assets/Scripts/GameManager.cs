@@ -118,15 +118,24 @@ public class GameManager : MonoBehaviour
 
     public int CheckPathogenUnlocked()
     {
-        if(elapsedTime > unlockTime[maxUnlockedIndex + 1])
+        try
         {
-            maxUnlockedIndex++;
-            setNewInstruction("More powerful pathogens will invade as time passes...");
-            Debug.Log("Index " + maxUnlockedIndex + " unlocked at " + elapsedTime + "!");
-            return CheckPathogenUnlocked();
+            if(elapsedTime > unlockTime[maxUnlockedIndex + 1])
+            {
+                maxUnlockedIndex++;
+                setNewInstruction("More powerful pathogens will invade as time passes...");
+                Debug.Log("Index " + maxUnlockedIndex + " unlocked at " + elapsedTime + "!");
+                return CheckPathogenUnlocked();
+            }
+
+            return maxUnlockedIndex;
         }
 
-        return maxUnlockedIndex;
+        catch(IndexOutOfRangeException)
+        {
+            Debug.Log("Max difficulty unlocked");
+            return maxUnlockedIndex;
+        }
     }
 
     // Generate resource
