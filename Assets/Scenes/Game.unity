@@ -17298,7 +17298,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Eradicate All Pathogens by Placing Immune Cells
+  m_text: 'Eliminate pathogens by placing immune cells '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4f3b851fa380d4041a8cac5f54d62920, type: 2}
   m_sharedMaterial: {fileID: 1732743631107996747, guid: 4f3b851fa380d4041a8cac5f54d62920, type: 2}

@@ -67,7 +67,7 @@ public class GameManager : MonoBehaviour
 
         GameOver = false;
 
-        setNewInstruction("Eliminate All Pathogens by Placing Immune Cells");
+        setNewInstruction("Eliminate pathogens by placing immune cells");
 
         foreach(GameObject gameObject in FindObjectsByType<GameObject>(FindObjectsSortMode.None))
         {
