@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public GameObject pauseCanvas;
     public Slider slider;
     InfographicUI infographicUI;
+    List<String> pastMessages;
     [SerializeField] GameObject adaptiveCellButton;
     [SerializeField] SwitchTargetSprite targetDisplay;
     [SerializeField] ChangeInstruction changeInstruction;
@@ -208,6 +209,10 @@ public class GameManager : MonoBehaviour
 
     public void setNewInstruction(string Message)
     {
-        changeInstruction.change(Message);
+        if(!pastMessages.Contains(Message))
+        {
+            pastMessages.Add(Message);
+            changeInstruction.change(Message);
+        }
     }
 }
