@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ff30ed6fe5ee045a7c99fb1aeb9f4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToReplicate: 10
+  timeToReplicate: 20
   replicatableCount: 1
   childReplication: 0
 --- !u!114 &-252532723502940206

@@ -25,6 +25,7 @@ public class ForceSpawner : MonoBehaviour
             Quaternion spawnerQuaternion = transform.rotation * Quaternion.Euler(0f, 0f, 180f) * randomQuaternion;
 
             GameObject instance = Instantiate(entity, transform.position, spawnerQuaternion);
+            instance.layer = LayerMask.NameToLayer("Pathogen");
 
             Idle idle = instance.GetComponent<Idle>();
             idle.rotateOnStart = false;

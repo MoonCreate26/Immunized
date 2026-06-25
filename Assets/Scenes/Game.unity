@@ -1867,7 +1867,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 15
+  m_text: 10
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 472410cf0d9c667489e7c4abe0015b23, type: 2}
   m_sharedMaterial: {fileID: 7994537828241107334, guid: 472410cf0d9c667489e7c4abe0015b23, type: 2}
@@ -5105,7 +5105,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 20
+  m_text: 15
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 472410cf0d9c667489e7c4abe0015b23, type: 2}
   m_sharedMaterial: {fileID: 7994537828241107334, guid: 472410cf0d9c667489e7c4abe0015b23, type: 2}
@@ -5635,7 +5635,7 @@ MonoBehaviour:
   costDisplay: {fileID: 1695234095}
   immuneCell: {fileID: 7969881755938797615, guid: 9b31837ff48f3d0499aa7e86d3c2b006, type: 3}
   adaptive: 0
-  cost: 15
+  cost: 25
   placeableCount: 0
   scrollRect: {fileID: 863806462}
   purchasable: 1
@@ -8437,7 +8437,7 @@ MonoBehaviour:
   costDisplay: {fileID: 976195520}
   immuneCell: {fileID: 7969881755938797615, guid: bb80224550bc44c4c99da11eec3f7aeb, type: 3}
   adaptive: 0
-  cost: 15
+  cost: 10
   placeableCount: 10
   scrollRect: {fileID: 863806462}
   purchasable: 1
@@ -11983,7 +11983,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 15
+  m_text: 25
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 472410cf0d9c667489e7c4abe0015b23, type: 2}
   m_sharedMaterial: {fileID: 7994537828241107334, guid: 472410cf0d9c667489e7c4abe0015b23, type: 2}
@@ -16284,7 +16284,7 @@ MonoBehaviour:
   costDisplay: {fileID: 1691886309}
   immuneCell: {fileID: 7969881755938797615, guid: 7d500a4bedc02e145b26073f729f9e1b, type: 3}
   adaptive: 0
-  cost: 20
+  cost: 15
   placeableCount: 0
   scrollRect: {fileID: 863806462}
   purchasable: 1

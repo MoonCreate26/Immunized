@@ -158,9 +158,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ff30ed6fe5ee045a7c99fb1aeb9f4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToReplicate: 10
+  timeToReplicate: 25
   replicatableCount: 2
-  countLimit: 20
+  childReplication: 0
 --- !u!114 &8944566983279928346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,8 +197,10 @@ MonoBehaviour:
   pathogenIdx: 2
   pathogenResource: 1
   resourceDropChance: 0
-  deathDelayAmount: 3
+  countLimit: 20
+  slip: 0
   invisible: 1
+  deathDelayAmount: 3
   grayScale: {fileID: 2100000, guid: 6efa7e7fc7503b14cba65157238d576c, type: 2}
   attracter: {fileID: 0}
 --- !u!114 &690011341800012340
