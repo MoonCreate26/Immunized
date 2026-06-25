@@ -116,7 +116,6 @@ public class PathogenicBehavior : MonoBehaviour
 
         gameManager.spawnCount--;
         gameManager.pathogenCount[pathogenIdx]--;
-        gameManager.CheckPathogenEliminated();
     }
 
     public void Disable()

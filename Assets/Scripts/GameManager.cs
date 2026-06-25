@@ -27,7 +27,6 @@ public class GameManager : MonoBehaviour
     public float generationInterval = 2f;
     public float cellGenerationValue = 0.1f;
     public float minGenerationInterval = 0.5f;
-    public int currentWave;
 
     // Pathogen & Spawn Mechanic
     [SerializeField] int spawnCapacity = 10;
@@ -36,8 +35,7 @@ public class GameManager : MonoBehaviour
     public bool spawnEnabled = true;
     public int maxUnlockedIndex = 0;
     public float difficultyMultiplier = 1;
-    public float elapsedTime = 0f;
-    bool pathogenEliminated = false;
+    float elapsedTime = 0f;
     [HideInInspector] public int[] pathogenCount;
 
     [SerializeField] public UniversalPathogenDictionary pathogenDictionary;
@@ -116,19 +114,6 @@ public class GameManager : MonoBehaviour
         // Update spawn check
         spawnCapacity = (int)(baseCapacity * Math.Pow(difficultyMultiplier, 2));
         spawnEnabled = spawnCount < spawnCapacity;
-    }
-
-    public void CheckPathogenEliminated()
-    {
-        if(FindObjectsByType<PathogenicBehavior>(FindObjectsSortMode.None).Length <= 0)
-        {
-            pathogenEliminated = true;
-        }
-
-        else
-        {
-            pathogenEliminated = false;
-        }
     }
 
     public int CheckPathogenUnlocked()
