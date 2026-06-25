@@ -125,22 +125,24 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
             placeable = false;
             image.color = Color.gray;
             
-            if(cursorOnUI.CheckCursorUI())
-            {
-                return;
-            }
-            
             placeabilityWarning.enabled = true;
 
-            if(cursorOnCollider.CheckCursorCollider("Cells", placeRadius))
+            if(placeableCount <= currentPlacedCount && placeableCount > 0)
+            {
+                placeabilityWarning.text = "Maximum number of this cell reached";
+            }
+
+            else if(cursorOnUI.CheckCursorUI())
+            {
+                placeabilityWarning.enabled = false;
+            }
+
+            else if(cursorOnCollider.CheckCursorCollider("Cells", placeRadius))
             {
                 placeabilityWarning.text = "Cannot Overlap With Cells";
             }
 
-            else if(placeableCount <= currentPlacedCount)
-            {
-                placeabilityWarning.text = "Maximum number of this cell reached";
-            }
+
         }
     }
 
