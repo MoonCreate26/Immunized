@@ -4277,6 +4277,7 @@ MonoBehaviour:
   cellGenerationValue: 0.05
   minGenerationInterval: 0.75
   currentWave: 0
+  maxUnlockedIndex: 0
   adaptiveImmuneTarget: 
   GameOver: 0
   Paused: 0
@@ -4285,6 +4286,16 @@ MonoBehaviour:
   adaptiveCellButton: {fileID: 330504196}
   targetDisplay: {fileID: 1136656000}
   changeInstruction: {fileID: 2091098702}
+  unlockTime:
+  - 0
+  - 15
+  - 23
+  - 56
+  pathogenPrefabs:
+  - {fileID: 499899561030677069, guid: feb2ec02174218743a18db4d547b9937, type: 3}
+  - {fileID: 499899561030677069, guid: bc94e4003c0925a4a961adee8646dd4e, type: 3}
+  - {fileID: 1627299499371739899, guid: 74740db5a955cb145a405457731fff77, type: 3}
+  - {fileID: 499899561030677069, guid: 4b6eb05c482bbe24c9175ca8c282d7f8, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -9075,12 +9086,16 @@ MonoBehaviour:
     values:
     - AntibodyColor: {r: 0, g: 0.38679248, b: 0.337332, a: 1}
       Texture: {fileID: 21300000, guid: 294f5c655d5957046b45b77d852b29d9, type: 3}
+      Delay: 0
     - AntibodyColor: {r: 0.5600175, g: 0, b: 0.7735849, a: 1}
       Texture: {fileID: 21300000, guid: 92c7c744a7d8e2248b633e9ddcbbe110, type: 3}
+      Delay: 0
     - AntibodyColor: {r: 0.13007298, g: 0.745283, b: 0.67260164, a: 1}
       Texture: {fileID: 21300000, guid: 18e1f8793f800804f953076af0e12a08, type: 3}
+      Delay: 0
     - AntibodyColor: {r: 1, g: 1, b: 1, a: 1}
       Texture: {fileID: 21300000, guid: 33bfa2477606abb4db8be7a55f213fc4, type: 3}
+      Delay: 0
 --- !u!4 &1123463584
 Transform:
   m_ObjectHideFlags: 0

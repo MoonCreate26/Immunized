@@ -7,40 +7,55 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    // UI
     public TMP_Text resourceCount;
     public TMP_Text waveText;
     public Animator GameOverAnimator;
     public PanZoom panZoom;
     public GameObject pauseCanvas;
     public Slider slider;
-
+    InfographicUI infographicUI;
+    [SerializeField] GameObject adaptiveCellButton;
+    [SerializeField] SwitchTargetSprite targetDisplay;
+    [SerializeField] ChangeInstruction changeInstruction;
+    
+    // Resource Generation
     public int resources = 30;
     public int resourcesCapacity = 90;
     public float generationInterval = 2f;
     public float cellGenerationValue = 0.1f;
     public float minGenerationInterval = 0.5f;
     public int currentWave;
-    public string adaptiveImmuneTarget;
-    public bool GameOver = false;
-    public bool Paused = false;
 
+    // Pathogen & Spawn Mechanic
+    Spawner[] spawnerList;
+    public int maxUnlockedIndex = 0;
+    public float difficultyMultiplier = 1;
+    float elapsedTime = 0f;
     bool pathogenEliminated = false;
     bool spawnerEmptied = false;
     int spawnerAmount;
-    Spawner[] spawnerList;
-    float cellAmount;
-    float killedCellAmount = 1f;
-    InfographicUI infographicUI;
-    
-    [SerializeField] float acceptableKilledCellAmount;
-    [SerializeField] GameObject adaptiveCellList;
-    [SerializeField] GameObject adaptiveCellButton;
-    [SerializeField] SwitchTargetSprite targetDisplay;
-    [SerializeField] ChangeInstruction changeInstruction;
 
+    [SerializeField] public UniversalPathogenDictionary pathogenDictionary;
+    [SerializeField] float[] unlockTime;
+    [SerializeField] public GameObject[] pathogenPrefabs;
+
+    // Adaptive Immune System
+    public int adaptiveImmuneTarget;
+    [SerializeField] GameObject adaptiveCellList;
     bool currentlyShowingAdaptive = false;
 
+    // Game State
+    public bool GameOver = false;
+    public bool Paused = false;
+
+    // Cells
+    float cellAmount;
+    float killedCellAmount = 1f;
+    [SerializeField] float acceptableKilledCellAmount;
     
+    // Initialize UI and Spawners
+    // Handle cell count
     void Start()
     {
         slider.maxValue = acceptableKilledCellAmount;
@@ -65,8 +80,12 @@ public class GameManager : MonoBehaviour
         StartCoroutine(resourceGenerator());
     }
 
+    // Track time elapsed & Game State
+    // Check resource capacity
     void Update()
     {
+        elapsedTime += Time.deltaTime;
+
         resourceCount.text = resources.ToString();
         waveText.text = "Wave " + (currentWave + 1).ToString();
 
@@ -115,6 +134,17 @@ public class GameManager : MonoBehaviour
         {
             pathogenEliminated = false;
         }
+    }
+
+    public int CheckPathogenUnlocked()
+    {
+        if(elapsedTime > unlockTime[maxUnlockedIndex + 1])
+        {
+            maxUnlockedIndex++;
+            return CheckPathogenUnlocked();
+        }
+
+        return maxUnlockedIndex;
     }
 
     public void CheckSpawnerEmptied()

@@ -7,7 +7,7 @@ public class UniversalPathogenDictionary : MonoBehaviour
     [UDictionary.Split(30, 70)]
     public UDictionary1 pathogenDictionary;
     [Serializable]
-    public class UDictionary1 : UDictionary<string, PathogenInfo> { }
+    public class UDictionary1 : UDictionary<int, PathogenInfo> { }
 
     [Serializable]
     public class Key
@@ -25,16 +25,21 @@ public class UniversalPathogenDictionary : MonoBehaviour
         public string lastName;
     }
 
-    public object GetPathogenInfo(string pathogenName, string operationType)
+    public object GetPathogenInfo(int idx, string operationType)
     {
         if(operationType == "Sprite")
         {
-            return pathogenDictionary[pathogenName].Texture;
+            return pathogenDictionary[idx].Texture;
         }
 
         else if(operationType == "Color")
         {
-            return pathogenDictionary[pathogenName].AntibodyColor;
+            return pathogenDictionary[idx].AntibodyColor;
+        }
+
+        else if(operationType == "Delay")
+        {
+            return pathogenDictionary[idx].SpawnDelay;
         }
 
         else
@@ -50,5 +55,6 @@ public class PathogenInfo
 {
     public Color AntibodyColor;
     public Sprite Texture;
+    public float SpawnDelay;
 }
 

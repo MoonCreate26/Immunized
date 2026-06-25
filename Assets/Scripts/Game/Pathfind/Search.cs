@@ -8,7 +8,7 @@ public class Search : MonoBehaviour
     public bool searchDisabled = false;
 
     public bool filterModeActive = false;
-    public string filterName;
+    public int filterIdx;
 
     void OnTriggerStay2D(Collider2D other)
     {
@@ -19,7 +19,7 @@ public class Search : MonoBehaviour
             return;
         }
 
-        if (filterModeActive && behavior.pathogenName == filterName)
+        if (filterModeActive && behavior.pathogenIdx == filterIdx)
         {
             destinationSetter.target = other.transform;
         }

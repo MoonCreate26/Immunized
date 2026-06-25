@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class Antibody : MonoBehaviour
 {
-    public string targetName;
+    public int targetIdx;
     public Search search;
     public float lifeTime = 15f;
 
@@ -18,7 +18,7 @@ public class Antibody : MonoBehaviour
         StartCoroutine(delayedDeath());
 
         search.filterModeActive = true;
-        search.filterName = targetName;
+        search.filterIdx = targetIdx;
     }
 
     void Update()

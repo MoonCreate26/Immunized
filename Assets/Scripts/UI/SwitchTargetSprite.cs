@@ -14,8 +14,8 @@ public class SwitchTargetSprite : MonoBehaviour
         image = GetComponent<Image>();
     }
 
-    public void UpdateSprite(string name)
+    public void UpdateSprite(int idx)
     {
-        image.sprite = (Sprite)pathogenDictionary.GetPathogenInfo(name, "Sprite");
+        image.sprite = (Sprite)pathogenDictionary.GetPathogenInfo(idx, "Sprite");
     }
 }

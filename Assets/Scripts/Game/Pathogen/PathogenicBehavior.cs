@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class PathogenicBehavior : MonoBehaviour
 {
     public string pathogenType;
-    public string pathogenName;
+    public int pathogenIdx;
     public int pathogenResource;
     [Range(0f, 100f)] public float resourceDropChance;
     public float deathDelayAmount = 5f;

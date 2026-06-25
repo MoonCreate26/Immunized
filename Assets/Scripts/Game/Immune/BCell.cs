@@ -8,13 +8,13 @@ public class BCell : MonoBehaviour
     public float productionRate = 1f;
 
     GameManager gameManager;
-    UniversalPathogenDictionary pathogenDictionary;
-    string antibodyTarget;
+    UniversalPathogenDictionary dictionary;
+    int antibodyTarget;
 
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
-        pathogenDictionary = FindObjectOfType<UniversalPathogenDictionary>();
+        dictionary = gameManager.pathogenDictionary;
 
         antibodyTarget = gameManager.adaptiveImmuneTarget;
 
@@ -26,8 +26,8 @@ public class BCell : MonoBehaviour
         yield return new WaitForSeconds(productionRate);
 
         GameObject newAntibody = Instantiate(antibody, transform.position, transform.rotation);
-        newAntibody.GetComponent<Antibody>().targetName = antibodyTarget;
-        newAntibody.GetComponentInChildren<SpriteRenderer>().color = (Color)pathogenDictionary.GetPathogenInfo(antibodyTarget, "Color");
+        newAntibody.GetComponent<Antibody>().targetIdx = antibodyTarget;
+        newAntibody.GetComponentInChildren<SpriteRenderer>().color = (Color)dictionary.GetPathogenInfo(antibodyTarget, "Color");
 
         StartCoroutine(produceAntibody());
     }

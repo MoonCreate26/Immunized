@@ -7,7 +7,7 @@ public class DendriticCell : MonoBehaviour
     public int requiredSampleCount = 3;
     public Transform lymphNode;
     
-    [HideInInspector] public string newImmuneTarget;
+    [HideInInspector] public int newImmuneTarget;
 
     GameManager gameManager;
     ImmuneCellBehavior immuneCellBehavior;
@@ -49,9 +49,9 @@ public class DendriticCell : MonoBehaviour
 
     public void GetSample(PathogenicBehavior behavior)
     {
-        newImmuneTarget = behavior.pathogenName;
+        newImmuneTarget = behavior.pathogenIdx;
         search.filterModeActive = true;
-        search.filterName = newImmuneTarget;
+        search.filterIdx = newImmuneTarget;
     }
 
     public void incrementSampleCount()

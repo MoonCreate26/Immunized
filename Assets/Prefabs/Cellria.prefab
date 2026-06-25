@@ -179,6 +179,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 3373935326573597863}
   signal: {fileID: 0}
   EmitSignal: 0
+  isCivillianCell: 0
   signalChance: 0
 --- !u!114 &3599720598800429423
 MonoBehaviour:
@@ -193,7 +194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathogenType: Bacteria
-  pathogenName: Cellria
+  pathogenName: 2
   pathogenResource: 1
   resourceDropChance: 0
   deathDelayAmount: 3
@@ -213,6 +214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathParticle: {fileID: 6502426466513184211, guid: 1f6f847b82a669249a87c04c20d01ef0, type: 3}
+  additionalInstantiation: {fileID: 0}
 --- !u!1 &4697145121613979993
 GameObject:
   m_ObjectHideFlags: 0

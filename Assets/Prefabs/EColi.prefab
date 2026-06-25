@@ -179,6 +179,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 7103440543676665530}
   signal: {fileID: 0}
   EmitSignal: 0
+  isCivillianCell: 0
   signalChance: 0
 --- !u!114 &-2145806138134815029
 MonoBehaviour:
@@ -193,7 +194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathogenType: Bacteria
-  pathogenName: EColi
+  pathogenName: 0
   pathogenResource: 2
   resourceDropChance: 50
   deathDelayAmount: 3
