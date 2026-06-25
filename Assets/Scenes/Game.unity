@@ -800,8 +800,8 @@ RectTransform:
   m_Children:
   - {fileID: 976195516}
   - {fileID: 1691886305}
-  - {fileID: 1695234099}
   - {fileID: 1912812173}
+  - {fileID: 1695234099}
   m_Father: {fileID: 863806456}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1867,7 +1867,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 10
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 472410cf0d9c667489e7c4abe0015b23, type: 2}
   m_sharedMaterial: {fileID: 7994537828241107334, guid: 472410cf0d9c667489e7c4abe0015b23, type: 2}
@@ -3943,7 +3943,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5, y: -161.36519}
+  m_AnchoredPosition: {x: -5, y: -123.399635}
   m_SizeDelta: {x: 139.03, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &501334879
@@ -3975,7 +3975,7 @@ MonoBehaviour:
   m_Padding:
     m_Left: 0
     m_Right: 0
-    m_Top: 100
+    m_Top: 33
     m_Bottom: 0
   m_ChildAlignment: 1
   m_Spacing: 16
@@ -4280,7 +4280,7 @@ MonoBehaviour:
   resourcesCapacity: 30
   generationInterval: 1.5
   cellGenerationValue: 0.05
-  minGenerationInterval: 0.75
+  minGenerationInterval: 0.5
   spawnCapacity: 10
   spawnCount: 0
   spawnEnabled: 1
@@ -5105,7 +5105,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 15
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 472410cf0d9c667489e7c4abe0015b23, type: 2}
   m_sharedMaterial: {fileID: 7994537828241107334, guid: 472410cf0d9c667489e7c4abe0015b23, type: 2}
@@ -8240,6 +8240,7 @@ GameObject:
   - component: {fileID: 976195517}
   - component: {fileID: 976195519}
   - component: {fileID: 976195520}
+  - component: {fileID: 976195521}
   m_Layer: 5
   m_Name: MacrophageCost
   m_TagString: Untagged
@@ -8334,6 +8335,20 @@ MonoBehaviour:
   offsetX: 75
   offsetY: 50
   isOnDrag: 0
+--- !u!114 &976195521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976195515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcfc6f70f86def348bb93da636658ea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icon: {fileID: 994633995}
+  costText: {fileID: 222599346}
 --- !u!4 &979825901 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1710851442304955468, guid: 5d858319db222a4448b127453bcd3711, type: 3}
@@ -9798,8 +9813,8 @@ MonoBehaviour:
   costDisplay: {fileID: 1912812177}
   immuneCell: {fileID: 7727182411557068586, guid: b8fa5487876ea6b4fb6872faa02fe849, type: 3}
   adaptive: 0
-  cost: 10
-  placeableCount: 3
+  cost: 8
+  placeableCount: 6
   scrollRect: {fileID: 863806462}
   purchasable: 1
   darkGray: {r: 0.27, g: 0.27, b: 0.27, a: 1}
@@ -11983,7 +11998,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 25
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 472410cf0d9c667489e7c4abe0015b23, type: 2}
   m_sharedMaterial: {fileID: 7994537828241107334, guid: 472410cf0d9c667489e7c4abe0015b23, type: 2}
@@ -13166,6 +13181,7 @@ GameObject:
   - component: {fileID: 1691886306}
   - component: {fileID: 1691886308}
   - component: {fileID: 1691886309}
+  - component: {fileID: 1691886310}
   m_Layer: 5
   m_Name: NeutrophilCost
   m_TagString: Untagged
@@ -13260,6 +13276,20 @@ MonoBehaviour:
   offsetX: 75
   offsetY: 50
   isOnDrag: 0
+--- !u!114 &1691886310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1691886304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcfc6f70f86def348bb93da636658ea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icon: {fileID: 2012878248}
+  costText: {fileID: 619004986}
 --- !u!4 &1692753312 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7725200255151112016, guid: 1d3ddb2574229f74180aaf994f3701c3, type: 3}
@@ -13278,6 +13308,7 @@ GameObject:
   - component: {fileID: 1695234097}
   - component: {fileID: 1695234096}
   - component: {fileID: 1695234095}
+  - component: {fileID: 1695234100}
   m_Layer: 5
   m_Name: DendriticCost
   m_TagString: Untagged
@@ -13372,6 +13403,20 @@ RectTransform:
   m_AnchoredPosition: {x: 1000, y: 0}
   m_SizeDelta: {x: 48, y: 42}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1695234100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1695234094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcfc6f70f86def348bb93da636658ea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icon: {fileID: 702067148}
+  costText: {fileID: 1492079281}
 --- !u!1 &1698865992
 GameObject:
   m_ObjectHideFlags: 0
@@ -15410,6 +15455,7 @@ GameObject:
   - component: {fileID: 1912812175}
   - component: {fileID: 1912812174}
   - component: {fileID: 1912812177}
+  - component: {fileID: 1912812178}
   m_Layer: 5
   m_Name: AdipocyteCost
   m_TagString: Untagged
@@ -15504,6 +15550,20 @@ MonoBehaviour:
   offsetX: 75
   offsetY: 50
   isOnDrag: 0
+--- !u!114 &1912812178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1912812172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcfc6f70f86def348bb93da636658ea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icon: {fileID: 1214420564}
+  costText: {fileID: 2042197122}
 --- !u!1 &1943589794
 GameObject:
   m_ObjectHideFlags: 0
@@ -16534,7 +16594,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 10
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 472410cf0d9c667489e7c4abe0015b23, type: 2}
   m_sharedMaterial: {fileID: 7994537828241107334, guid: 472410cf0d9c667489e7c4abe0015b23, type: 2}
