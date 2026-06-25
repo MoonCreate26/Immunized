@@ -9,7 +9,6 @@ public class BacterialBehavior : MonoBehaviour
     public int replicatableCount = 1;
     public bool childReplication = false;
     float elapsedTime = 0f;
-    int count = 0;
 
     // UI
     InteractUI interactUI;

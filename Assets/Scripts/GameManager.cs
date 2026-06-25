@@ -4,12 +4,14 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine.UI;
+using System.Threading;
 
 public class GameManager : MonoBehaviour
 {
     // UI
     public TMP_Text resourceCount;
-    public TMP_Text waveText;
+    public TMP_Text timerText;
+    public TMP_Text timerTextFinal;
     public Animator GameOverAnimator;
     public PanZoom panZoom;
     public GameObject pauseCanvas;
@@ -86,24 +88,32 @@ public class GameManager : MonoBehaviour
     // Check resource capacity
     void Update()
     {
+        // Update time
         elapsedTime += Time.deltaTime;
         difficultyMultiplier = 1 + elapsedTime * 0.005f;
 
+        // Update timer
+        TimeSpan time = TimeSpan.FromSeconds(elapsedTime);
+        timerText.text = time.ToString(@"mm\:ss\.ff");
+
+        // Update resources
         resourceCount.text = resources.ToString();
-        waveText.text = "Wave " + (currentWave + 1).ToString();
 
         if(resources > resourcesCapacity)
         {
             resources = resourcesCapacity;
         }
 
+        // Check if GameOver condition has been met
         if(killedCellAmount > acceptableKilledCellAmount)
         {
             GameOverAnimator.gameObject.SetActive(true);
             GameOver = true;
             panZoom.enabled = false;
+            timerTextFinal.text = timerText.text;
         }
 
+        // Update spawn check
         spawnCapacity = (int)(baseCapacity * Math.Pow(difficultyMultiplier, 2));
         spawnEnabled = spawnCount < spawnCapacity;
     }
@@ -126,6 +136,7 @@ public class GameManager : MonoBehaviour
         if(elapsedTime > unlockTime[maxUnlockedIndex + 1])
         {
             maxUnlockedIndex++;
+            setNewInstruction("More powerful pathogens will invade as time passes...");
             Debug.Log("Index " + maxUnlockedIndex + " unlocked at " + elapsedTime + "!");
             return CheckPathogenUnlocked();
         }
