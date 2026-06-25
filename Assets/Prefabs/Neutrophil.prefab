@@ -478,7 +478,7 @@ MonoBehaviour:
   ignoreDead: 1
   searchDisabled: 0
   filterModeActive: 0
-  filterName: 
+  filterIdx: 0
 --- !u!114 &3322564151862856499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -749,6 +749,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 134fcf555aa06ae4eba48d300d0244aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  message: Neutrophil explodes when there is many pathogens nearby
 --- !u!114 &6401378168050498078
 MonoBehaviour:
   m_ObjectHideFlags: 0

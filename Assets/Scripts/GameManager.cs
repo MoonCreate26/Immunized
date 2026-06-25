@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
     public int maxUnlockedIndex = 0;
     public float difficultyMultiplier = 1;
     float elapsedTime = 0f;
-    public int[] pathogenCount;
+    [HideInInspector] public int[] pathogenCount;
 
     [SerializeField] public UniversalPathogenDictionary pathogenDictionary;
     [SerializeField] float[] unlockTime;

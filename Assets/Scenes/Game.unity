@@ -4121,7 +4121,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -57.2, y: -77.3}
+  m_AnchoredPosition: {x: 20.003, y: -43.1}
   m_SizeDelta: {x: 94.7066, y: 25.0678}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &513673805
@@ -9729,7 +9729,7 @@ MonoBehaviour:
   darkGray: {r: 0.27, g: 0.27, b: 0.27, a: 1}
   currentPlacedCount: 0
   placeabilityWarning: {fileID: 425966703}
-  specificInstruction: Adipocyte increase resource generation speed
+  specificInstruction: Adipocyte increase resource generation and capacity
   placeRadius: 3
 --- !u!114 &1214420565
 MonoBehaviour:
@@ -16654,7 +16654,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 110.2, y: -77.3}
+  m_AnchoredPosition: {x: 9.9, y: -132.6}
   m_SizeDelta: {x: 94.7066, y: 25.0678}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2049451213
@@ -16677,7 +16677,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: generation
+  m_text: generation and capacity
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4f3b851fa380d4041a8cac5f54d62920, type: 2}
   m_sharedMaterial: {fileID: 1732743631107996747, guid: 4f3b851fa380d4041a8cac5f54d62920, type: 2}
@@ -16740,7 +16740,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -28.45581, w: -0.79043007}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -17164,7 +17164,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 21.65, y: -77.3279}
+  m_AnchoredPosition: {x: 21.65, y: -80.88295}
   m_SizeDelta: {x: 58.164, y: 50.4981}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2078374555

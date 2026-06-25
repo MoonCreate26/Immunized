@@ -40,7 +40,6 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     bool placeable;
     bool mouseIsOutside;
     bool updateBlock = false;
-    bool FirstTimePlaced = true;
 
     void Start()
     {
@@ -180,12 +179,10 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
             gameManager.changeResource(-cost);
             currentPlacedCount++;
 
-            if(FirstTimePlaced && specificInstruction != "")
+            if(specificInstruction != "")
             {
                 gameManager.setNewInstruction(specificInstruction);
             }
-
-            FirstTimePlaced = false;
         }
 
         transform.position = defaultPosition;

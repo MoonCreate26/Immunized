@@ -587,7 +587,6 @@ MonoBehaviour:
   death: {fileID: -4670138888821551412}
   hypoPhagiaLimit: 7
   knockbackForce: 4
-  PhagocytosisChance: 0.5
   corpse: {fileID: 9203217305288313206, guid: 30043da7306ce8b41b52f514b5a9ad84, type: 3}
   sampling: 0
 --- !u!114 &8968865858520298208
@@ -649,6 +648,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 134fcf555aa06ae4eba48d300d0244aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  message: Macrophage devours pathogens
 --- !u!114 &8527969867248154804
 MonoBehaviour:
   m_ObjectHideFlags: 0
