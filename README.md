@@ -2,7 +2,7 @@
 
 Control your immune cells to eradicate pathogens! A real-time tower defense inspired by Philipp Dettmer's *Immune: A Journey Into the Mysterious System That Keeps You Alive*.
 
-[itch.io link](https://itch.io/game/edit/4725523)
+[itch.io link](https://lunarlaboratory.itch.io/immunized)
 
 # Project Status
 
